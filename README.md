@@ -1,4 +1,4 @@
-//Wallet App 
+Wallet App 
 # Requirements
 - Node Version Greater than 14.0.0
 - Docker Version 3 and higher
