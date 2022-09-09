@@ -1,6 +1,4 @@
-# Blockchain Backend Template - Stage 0
-Backend layer for communication between frontend and blockchain
-
+//Wallet App 
 # Requirements
 - Node Version Greater than 14.0.0
 - Docker Version 3 and higher
@@ -13,7 +11,6 @@ A quick [blog](https://blog.logrocket.com/commonjs-vs-es-modules-node-js/#:~:tex
 # Directory Structure
 The code structure is made in moduler way and follows MVC architecture.
 
-<img src="assets/mvc.png" style="width:60%" />
 <br>
 Details of folders are as follows:-
 
@@ -76,11 +73,6 @@ Provide PORT in .env. If not provided server will run at port 3000
 # Important Points To Note
 
 - If server is not able to connect to rabitmq or mongodb in starting, it will start gracefull shutdown of server(GraceFull shutdown means it will close all connections, services and server one by one)
-
-- Health check endpoint is added which will tell you health of server and which services are working fine. You can easily add more services for check by just simply adding it in healthCheck.js file
-
-<img src="assets/healthcheck.png" style="width:60%" />
-
 
 - Ratelimitter middleware is added to restrict unlimited calls to server from a particular client. Currently it is set for all routes and restriction is 1000 calls per hour. You can modify it as per your requirements
 
