@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use('/', routes)
 
 // registration Done
-
+// Extra functionality completed
 // app.use(
 //   morgan("combined", {
 //     stream: logger.stream,
