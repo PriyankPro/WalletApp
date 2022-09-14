@@ -24,7 +24,7 @@ export const signUp = async (req, res) => {
         error: 'User already exist or this email'
       })
     }
-    console.log(req.body)
+    // console.log(req.body)
     const hash = bcrypt.hashSync(req.body.password, 11)
     user = await new User({
       name: req.body.name,
@@ -66,7 +66,7 @@ export const signIn = (req, res) => {
       console.log(err)
       return res
         .status(400)
-        .json({ error: 'User with this email does not exist' })
+        .json({ error: 'User with this email does not exist please create new account if you are new user' })
     }
     // console.log(password, user.password)
     if (!bcrypt.compareSync(password, user.password)) {
@@ -99,6 +99,7 @@ export const signIn = (req, res) => {
 
 export const signOut = (req, res) => {
   res.clearCookie('token')
+
   res.json({
     message: 'User signout successfully'
   })
@@ -123,11 +124,7 @@ export const IsAdmin = (req, res, next) => {
 }
 
 export const isAuthenticated = (req, res, next) => {
-  console.log('Req.profile', req.profile)
-  console.log('Req.auth', req.auth)
-  console.log('Req.profile.id', req.profile._id)
-  console.log('Req.auth_id', req.auth._id)
-  const checker = req.profile && req.auth && req.profile._id === req.auth._id
+  const checker = req.profile && req.auth && req.profile._id == req.auth._id
   if (!checker) {
     return res.status(403).json({
       error: 'Access denied'

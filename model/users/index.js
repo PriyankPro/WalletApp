@@ -32,6 +32,16 @@ const userSchema = new mongoose.Schema(
     friendList: {
       type: Array,
       default: []
+    },
+    age: {
+      type: Number
+    },
+    city: {
+      type: String
+    },
+    kyc: {
+      type: Boolean,
+      default: false
     }
   },
   {

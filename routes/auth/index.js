@@ -1,13 +1,13 @@
 import express from 'express'
 import { body } from 'express-validator'
 import { signUp, signOut, signIn } from '../../controllers/auth'
-// const { signOut, signUp, signIn } = require('../Controller/auth')
+import { getUserById } from '../../controllers/index.js'
 
 //
 //
 
 const router = express.Router()
-
+router.param('userId', getUserById)
 router.post(
   '/signup',
   [
@@ -40,6 +40,6 @@ router.post(
   }
 )
 
-router.get('/signout/:', signOut)
+router.get('/signout/:userId', signOut)
 
 export default router
