@@ -15,6 +15,6 @@ import {
 const router = express.Router()
 router.param('userId', getUserById)
 
-router.get('/:userId', isSignedIn, isAuthenticated, doKyc)
+router.put('/:aadharId', doKyc)
 
 export default router

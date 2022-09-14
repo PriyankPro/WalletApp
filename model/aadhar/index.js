@@ -2,7 +2,8 @@ import mongoose from 'mongoose'
 
 const aadharSchema = new mongoose.Schema({
   userId: {
-    type: String
+    type: String,
+    unique: true
   }
 },
 
