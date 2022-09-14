@@ -32,6 +32,8 @@ app.use(helmet())
 app.use(express.static(path.join(__dirname, 'public')))
 app.use('/', routes)
 
+// registration Done
+
 // app.use(
 //   morgan("combined", {
 //     stream: logger.stream,
