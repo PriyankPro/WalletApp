@@ -3,6 +3,7 @@ import userRoute from './user'
 import kycRoute from './kyc'
 import ccardRoute from './creditcard'
 import aadharRoute from './aadharcard'
+import walletRoute from './Wallet'
 // import adminRoute from './admin'
 // import merchantRoute from './merchant'
 // import healthRoute from './health'
@@ -17,6 +18,7 @@ router.get('/', function (req, res) {
 router.use('/user', userRoute)
 router.use('/kyc', kycRoute)
 router.use('/aadhar', aadharRoute)
+router.use('/wallet', walletRoute)
 // router.use('/admin', adminRoute)
 // router.use('/merchant', merchantRoute)
 // router.use('/health', healthRoute)

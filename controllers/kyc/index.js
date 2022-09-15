@@ -16,3 +16,16 @@ export const doKyc = async (req, res) => {
     res.status(500).json(e)
   }
 }
+
+export const checkKyc = async (req, res, next) => {
+  const user = await User.findOne({ _id: req.params.userId })
+  try {
+    if (user.kyc) {
+      next()
+    } else {
+      res.status(400).json('KYC not done')
+    }
+  } catch (err) {
+    res.status(500).json(500)
+  }
+}
